@@ -1317,6 +1317,14 @@ bool8 MetatileBehavior_IsVase(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_IsPickaxable(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_PICKAXABLE)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 bool8 MetatileBehavior_IsTrashCan(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_TRASH_CAN)

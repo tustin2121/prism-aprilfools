@@ -1,4 +1,65 @@
 gText_Birch_Welcome::
+	.string "Greetings!\n"
+	.string "Welcome to the world of Pokémon!\p"
+	.string "I'm…{PAUSE 30} well, that doesn't matter.{PAUSE 30}\n"
+	.string "Anyway…\p"
+	.string "$"
+gText_Birch_Pokemon::
+	.string "This world is inhabited by\n"
+	.string "creatures known as Pokémon.\p"
+	.string "$"
+gText_Birch_MainSpeech::
+	.string "People and Pokémon, live and support\n"
+	.string "each other.\p"
+	.string "Some people play with Pokémon,\n"
+	.string "some people study them.\p"
+	.string "Others even battle their Pokémon\n"
+	.string "and strive to be champions.\p"
+	.string "$"
+	
+	.string "This is Red.\p"
+	.string "Hailing from Pallet Town in the\n"
+	.string "Kanto region, he successfully became\l"
+	.string "the region's Pokémon Champion…\p"
+	.string "…while also taking down the corrupt\n"
+	.string "Team Rocket.\p"
+	.string "$"
+	
+	.string "Meet Gold.\p"
+	.string "Also a young trainer, he left home\n"
+	.string "from New Bark in Johto, and\l"
+	.string "worked his way to the top…\p"
+	.string "…challenging many tough and trouble-\n"
+	.string "some foes along the way.\p"
+	.string "$"
+gText_Birch_AndYouAre::
+	.string "…but you!\n"
+	.string "You, too, are destiened for greatness!\p"
+	.string "Why not tell me a little about\n"
+	.string "yourself?\p"
+	.string "$"
+	
+	.string "Is this the look you want?$"
+	
+gText_Birch_WhatsYourName::
+	.string "Finally, could you please tell me\n"
+	.string "your name?$"
+	
+gText_Birch_AreYouReady::
+	.string "All right, are you ready?\p"
+	.string "Your very own Pokémon story is\n"
+	.string "about to unfold.\p"
+	.string "You'll face fun times and tough\n"
+	.string "challenges.\p"
+	.string "A world of dreams and adventures\n"
+	.string "with Pokémon awaits! Let's go!\p"
+	.string "I'm sure I'll see you later!\p"
+	.string "$"
+
+
+
+
+@ gText_Birch_Welcome::
 	.string "Hi! Sorry to keep you waiting!\p"
 	.string "Welcome to the world of POKéMON!\p"
 	.string "My name is BIRCH.\p"
@@ -6,12 +67,12 @@ gText_Birch_Welcome::
 	.string "PROFESSOR.\p"
 	.string "$"
 
-gText_Birch_Pokemon::
+@ gText_Birch_Pokemon::
 	.string "This is what we call a “POKéMON.”\p"
 	.string "\n"
 	.string "$"
 
-gText_Birch_MainSpeech::
+@ gText_Birch_MainSpeech::
 	.string "This world is widely inhabited by\n"
 	.string "creatures known as POKéMON.\p"
 	.string "We humans live alongside POKéMON,\n"
@@ -28,14 +89,14 @@ gText_Birch_MainSpeech::
 	.string "That's what I do.\p"
 	.string "$"
 
-gText_Birch_AndYouAre::
+@ gText_Birch_AndYouAre::
 	.string "And you are?$"
 
 gText_Birch_BoyOrGirl::
 	.string "Are you a boy?\n"
 	.string "Or are you a girl?$"
 
-gText_Birch_WhatsYourName::
+@ gText_Birch_WhatsYourName::
 	.string "All right.\n"
 	.string "What's your name?$"
 
@@ -43,13 +104,13 @@ gText_Birch_SoItsPlayer::
 	.string "So it's {PLAYER}{KUN}?$"
 
 gText_Birch_YourePlayer::
-	.string "Ah, okay!\p"
-	.string "You're {PLAYER}{KUN} who's moving to my\n"
-	.string "hometown of LITTLEROOT.\l"
-	.string "I get it now!\p"
+	@ .string "Ah, okay!\p"
+	@ .string "You're {PLAYER}{KUN} who's moving to my\n"
+	@ .string "hometown of LITTLEROOT.\l"
+	@ .string "I get it now!\p"
 	.string "$"
 
-gText_Birch_AreYouReady::
+@ gText_Birch_AreYouReady::
 	.string "All right, are you ready?\p"
 	.string "Your very own adventure is about\n"
 	.string "to unfold.\p"

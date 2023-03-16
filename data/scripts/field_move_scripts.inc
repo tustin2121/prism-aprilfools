@@ -54,8 +54,9 @@ Text_MonUsedFieldMove:
 	.string "{STR_VAR_1} used {STR_VAR_2}!$"
 
 Text_CantCut:
-	.string "This tree looks like it can be\n"
-	.string "CUT down!$"
+	.string "Oh, this tree can be cut!$"
+	@ .string "This tree looks like it can be\n"
+	@ .string "CUT down!$"
 
 @ Interact with smashable rock
 EventScript_RockSmash::

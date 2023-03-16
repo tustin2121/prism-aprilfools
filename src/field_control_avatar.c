@@ -394,6 +394,8 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
         return EventScript_PokemonCenterBookShelf;
     if (MetatileBehavior_IsVase(metatileBehavior) == TRUE)
         return EventScript_Vase;
+    if (MetatileBehavior_IsPickaxable(metatileBehavior) == TRUE)
+        return EventScript_Pickaxe;
     if (MetatileBehavior_IsTrashCan(metatileBehavior) == TRUE)
         return EventScript_EmptyTrashCan;
     if (MetatileBehavior_IsShopShelf(metatileBehavior) == TRUE)

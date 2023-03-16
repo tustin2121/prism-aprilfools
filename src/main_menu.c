@@ -1289,7 +1289,8 @@ static void Task_NewGameBirchSpeech_Init(u8 taskId)
     gTasks[taskId].tPlayerSpriteId = SPRITE_NONE;
     gTasks[taskId].data[3] = 0xFF;
     gTasks[taskId].tTimer = 0xD8;
-    PlayBGM(MUS_ROUTE122);
+    // PlayBGM(MUS_ROUTE122);
+    PlayBGM(MUS_GSC_ROUTE38);
     ShowBg(0);
     ShowBg(1);
 }
@@ -1307,7 +1308,8 @@ static void Task_NewGameBirchSpeech_WaitToShowBirch(u8 taskId)
         spriteId = gTasks[taskId].tBirchSpriteId;
         gSprites[spriteId].x = 136;
         gSprites[spriteId].y = 60;
-        gSprites[spriteId].invisible = FALSE;
+        gSprites[spriteId].invisible = TRUE;
+        // gSprites[spriteId].invisible = FALSE;
         gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
         NewGameBirchSpeech_StartFadeInTarget1OutTarget2(taskId, 10);
         NewGameBirchSpeech_StartFadePlatformOut(taskId, 20);
@@ -1650,6 +1652,10 @@ static void Task_NewGameBirchSpeech_SlidePlatformAway2(u8 taskId)
     else
     {
         gTasks[taskId].func = Task_NewGameBirchSpeech_ReshowBirchLotad;
+        // NewGameBirchSpeech_StartFadePlatformIn(taskId, 1);
+        // NewGameBirchSpeech_ClearWindow(0);
+        // gTasks[taskId].tTimer = 64;
+        // gTasks[taskId].func = Task_NewGameBirchSpeech_AreYouReady;
     }
 }
 
