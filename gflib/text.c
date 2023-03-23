@@ -217,7 +217,17 @@ static const struct FontInfo sFontInfos[] =
         .fgColor = 1,
         .bgColor = 2,
         .shadowColor = 15,
-    }
+    },
+    [FONT_SKYRIM] = {
+        .fontFunction = FontFunc_Normal,
+        .maxLetterWidth = 6,
+        .maxLetterHeight = 16,
+        .letterSpacing = 0,
+        .lineSpacing = 0,
+        .fgColor = 2,
+        .bgColor = 0,
+        .shadowColor = 1,
+    },
 };
 
 static const u8 sMenuCursorDimensions[][2] =

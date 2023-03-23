@@ -1765,6 +1765,10 @@
 	.2byte 0
 	.byte 3+\condition
 	.endm
+	
+	.macro startskyrim
+	.byte 0xe4
+	.endm
 
 @ Supplementary
 

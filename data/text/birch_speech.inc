@@ -1,7 +1,7 @@
 gText_Birch_Welcome::
 	.string "Greetings!\n"
 	.string "Welcome to the world of Pokémon!\p"
-	.string "I'm…{PAUSE 30} well, that doesn't matter.{PAUSE 30}\n"
+	.string "I'm…{PAUSE 60} well, that doesn't matter.{PAUSE 60}\n"
 	.string "Anyway…\p"
 	.string "$"
 gText_Birch_Pokemon::
@@ -120,3 +120,19 @@ gText_Birch_YourePlayer::
 	.string "Well, I'll be expecting you later.\n"
 	.string "Come see me in my POKéMON LAB.\p"
 	.string "$"
+
+gText_Skyrim_Presents::
+	.string "        Bethesda Game Studios\n"
+	.string "               presents$"
+gText_Skyrim_Title::
+	.string "         The Elder Scrolls V:\n"
+	.string "                Skyrim$"
+gText_Skyrim_IntroLine1::
+	.string "Hey, you. You're finally awake.\p"
+	.string "You were trying to cross the border,\n"
+	.string "right?\p"
+	.string "Walked right into that\n"
+	.string "Imperial ambush, same as us,\l"
+	.string "and that thief over there.\p$"
+
+

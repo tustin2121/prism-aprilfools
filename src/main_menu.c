@@ -37,6 +37,8 @@
 #include "window.h"
 #include "mystery_gift_menu.h"
 
+#pragma region Top
+
 /*
  * Main menu state machine
  * -----------------------
@@ -527,6 +529,9 @@ enum
 };
 
 #define MAIN_MENU_BORDER_TILE   0x1D5
+
+#pragma endregion
+#pragma region Menu
 
 static void CB2_MainMenu(void)
 {
@@ -1251,6 +1256,9 @@ static void HighlightSelectedMainMenuItem(u8 menuType, u8 selectedMenuItem, s16 
     }
 }
 
+#pragma endregion
+#pragma region Birch Speech
+
 #define tPlayerSpriteId data[2]
 #define tBG1HOFS data[4]
 #define tIsDoneFadingSprites data[5]
@@ -1288,7 +1296,7 @@ static void Task_NewGameBirchSpeech_Init(u8 taskId)
     gTasks[taskId].func = Task_NewGameBirchSpeech_WaitToShowBirch;
     gTasks[taskId].tPlayerSpriteId = SPRITE_NONE;
     gTasks[taskId].data[3] = 0xFF;
-    gTasks[taskId].tTimer = 0xD8;
+    gTasks[taskId].tTimer = 216;
     // PlayBGM(MUS_ROUTE122);
     PlayBGM(MUS_GSC_ROUTE38);
     ShowBg(0);
@@ -2309,3 +2317,5 @@ static void Task_NewGameBirchSpeech_ReturnFromNamingScreenShowTextbox(u8 taskId)
 }
 
 #undef tTimer
+
+#pragma endregion

@@ -1936,6 +1936,16 @@ bool8 ScrCmd_playslotmachine(struct ScriptContext *ctx)
     return TRUE;
 }
 
+extern void CB2_InitSkyrim(void);
+bool8 ScrCmd_startskyrim(struct ScriptContext *ctx)
+{
+    u8 machineId = VarGet(ScriptReadHalfword(ctx));
+
+    SetMainCallback2(CB2_InitSkyrim);
+    ScriptContext_Stop();
+    return TRUE;
+}
+
 bool8 ScrCmd_setberrytree(struct ScriptContext *ctx)
 {
     u8 treeId = ScriptReadByte(ctx);

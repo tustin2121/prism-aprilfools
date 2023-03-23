@@ -58,7 +58,17 @@ PrismMap_Outside_Text_Mother:
 	.string "Thanks for coming with me, {PLAYER}.$"
 
 
-
+PrismMap_Outside_EventScript_TestSkyrim::
+	lock
+	fadescreen FADE_TO_BLACK
+	delay 15
+	@ 
+	startskyrim
+	waitstate
+	release
+	end
+	
+	
 PrismMap_Outside_EventScript_Fire::
 	msgbox PrismMap_Outside_Text_Fire, MSGBOX_SIGN
 	end
