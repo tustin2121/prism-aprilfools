@@ -14,7 +14,49 @@ PrismMap_Cave01_EventScript_TunnelMan::
 	@
 	fadescreen FADE_TO_BLACK
 	@ 
+	playse SE_SWITCH
+	waitse
+	playse SE_CLICK
+	waitse
+	playse SE_CLICK
+	waitse
+	playse SE_CLICK
+	waitse
+	playse SE_CLICK
+	waitse
+	playse SE_CLICK
+	waitse
+	playse SE_CLICK
+	waitse
+	playse SE_CLICK
+	waitse
+	playse SE_CLICK
+	waitse
+	playse SE_CLICK
+	waitse
+	playse SE_UNLOCK
+	waitse
+	playse SE_LAVARIDGE_FALL_WARP
+	delay 20
+	playse SE_ICE_BREAK
+	waitse
+	playse SE_FALL
+	waitse
+	delay 20
+	playse SE_M_ROCK_THROW
+	waitse
+	playse SE_M_STRENGTH
+	delay 10
+	playse SE_M_EXPLOSION
+	waitse
+	@ playse SE_M_EARTHQUAKE
+	@ waitse
+	delay 60
+	@ 
+	playbgm MUS_B_PYRAMID_TOP, TRUE
 	delay 15
+	startskyrim
+	waitstate
 	release
 	end
 

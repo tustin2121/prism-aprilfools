@@ -121,18 +121,13 @@ gText_Birch_YourePlayer::
 	.string "Come see me in my POKéMON LAB.\p"
 	.string "$"
 
-gText_Skyrim_Presents::
-	.string "        Bethesda Game Studios\n"
-	.string "               presents$"
-gText_Skyrim_Title::
-	.string "         The Elder Scrolls V:\n"
-	.string "                Skyrim$"
 gText_Skyrim_IntroLine1::
-	.string "Hey, you. You're finally awake.\p"
+	.string "{PAUSE 60}Hey,{PAUSE 30} you.{PAUSE 50} You're finally awake.\p"
 	.string "You were trying to cross the border,\n"
 	.string "right?\p"
 	.string "Walked right into that\n"
-	.string "Imperial ambush, same as us,\l"
-	.string "and that thief over there.\p$"
-
+	.string "Imperial ambush, same as us.\p$"
+gText_Skyrim_AprilFools::
+	.string "{CLEAR_TO 60}Happy April Fools\n"
+	.string "{CLEAR_TO 59}from RainbowDevs$"
 
