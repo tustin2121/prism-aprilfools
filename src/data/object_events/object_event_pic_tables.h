@@ -1617,6 +1617,22 @@ static const struct SpriteFrameImage sPicTable_BigRegisteelDoll[] = {
     obj_frame_tiles(gObjectEventPic_BigRegisteelDoll),
 };
 
+static const struct SpriteFrameImage sPicTable_Minecart[] = {
+    obj_frame_tiles(gObjectEventPic_Minecart),
+};
+
+static const struct SpriteFrameImage sPicTable_Campfire[] = {
+    overworld_frame(gObjectEventPic_Campfire, 2, 2, 0), //0),
+    overworld_frame(gObjectEventPic_Campfire, 2, 2, 0), //1),
+    overworld_frame(gObjectEventPic_Campfire, 2, 2, 0), //2),
+    overworld_frame(gObjectEventPic_Campfire, 2, 2, 0), //0),
+    overworld_frame(gObjectEventPic_Campfire, 2, 2, 0), //0),
+    overworld_frame(gObjectEventPic_Campfire, 2, 2, 0), //1),
+    overworld_frame(gObjectEventPic_Campfire, 2, 2, 0), //1),
+    overworld_frame(gObjectEventPic_Campfire, 2, 2, 0), //2),
+    overworld_frame(gObjectEventPic_Campfire, 2, 2, 0), //2),
+};
+
 static const struct SpriteFrameImage sPicTable_LatiasLatios[] = {
     overworld_frame(gObjectEventPic_LatiasLatios, 4, 4, 0),
     overworld_frame(gObjectEventPic_LatiasLatios, 4, 4, 0),

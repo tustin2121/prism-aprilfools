@@ -12,6 +12,7 @@ PrismMap_Cave01_EventScript_TunnelMan::
 	applymovement OBJ_EVENT_ID_PLAYER, PrismMap_Cave01_Movement_TunnelMan_Player
 	waitmovement OBJ_EVENT_ID_PLAYER
 	@
+	applymovement OBJ_EVENT_ID_PLAYER, PrismMap_Cave01_Movement_TunnelMan_Player2
 	fadescreen FADE_TO_BLACK
 	@ 
 	playse SE_SWITCH
@@ -77,6 +78,8 @@ PrismMap_Cave01_Movement_TunnelMan_Player:
 	delay_16
 	walk_down
 	walk_down
+	step_end
+PrismMap_Cave01_Movement_TunnelMan_Player2:
 	walk_down
 	step_end
 

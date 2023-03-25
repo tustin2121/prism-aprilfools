@@ -3,9 +3,10 @@ PrismMap_Outside_MapScripts::
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, PrismMap_Outside_OnWarpIntoMap
 	.byte 0
 
+.align 2
 PrismMap_Outside_OnWarpIntoMap:
 	map_script_2 VAR_LITTLEROOT_TOWN_STATE, 3, PrismMap_Outside_EventScript_PlaceLandslide
-	end
+	.2byte 0
 PrismMap_Outside_FrameTable:
 	map_script_2 VAR_LITTLEROOT_TOWN_STATE, 0, PrismMap_Outside_EventScript_IntroCutscene
 	.2byte 0

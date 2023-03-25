@@ -4427,7 +4427,7 @@
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "secondary_tileset": "gTileset_RusturfTunnel",
       "border_filepath": "data/layouts/PrismMap_Cave01/border.bin",
       "blockdata_filepath": "data/layouts/PrismMap_Cave01/map.bin"
     }
