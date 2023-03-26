@@ -34,7 +34,7 @@ gText_Birch_MainSpeech::
 	.string "$"
 gText_Birch_AndYouAre::
 	.string "…but you!\n"
-	.string "You, too, are destiened for greatness!\p"
+	.string "You, too, are destined for greatness!\p"
 	.string "Why not tell me a little about\n"
 	.string "yourself?\p"
 	.string "$"
