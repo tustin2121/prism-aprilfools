@@ -6,7 +6,7 @@ gText_Birch_Welcome::
 	.string "$"
 gText_Birch_Pokemon::
 	.string "This world is inhabited by\n"
-	.string "creatures known as Pokémon.\p"
+	.string "creatures known as Pokémon.{PAUSE 96}\p"
 	.string "$"
 gText_Birch_MainSpeech::
 	.string "People and Pokémon, live and support\n"
@@ -16,7 +16,7 @@ gText_Birch_MainSpeech::
 	.string "Others even battle their Pokémon\n"
 	.string "and strive to be champions.\p"
 	.string "$"
-	
+gText_Birch_RedIntro::
 	.string "This is Red.\p"
 	.string "Hailing from Pallet Town in the\n"
 	.string "Kanto region, he successfully became\l"
@@ -24,7 +24,7 @@ gText_Birch_MainSpeech::
 	.string "…while also taking down the corrupt\n"
 	.string "Team Rocket.\p"
 	.string "$"
-	
+gText_Birch_GoldIntro::
 	.string "Meet Gold.\p"
 	.string "Also a young trainer, he left home\n"
 	.string "from New Bark in Johto, and\l"
@@ -38,7 +38,9 @@ gText_Birch_AndYouAre::
 	.string "Why not tell me a little about\n"
 	.string "yourself?\p"
 	.string "$"
-	
+gText_Birch_ChooseModel::
+	.string "Select a character model.$"
+gText_Birch_ConfirmLook::
 	.string "Is this the look you want?$"
 	
 gText_Birch_WhatsYourName::

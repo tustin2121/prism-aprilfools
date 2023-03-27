@@ -2,7 +2,7 @@
   "id": "MAP_PRISM_MAP_OUTSIDE",
   "name": "PrismMap_Outside",
   "layout": "LAYOUT_PRISM_MAP_OUTSIDE",
-  "music": "MUS_GSC_ROUTE38",
+  "music": "MUS_VERDANTURF",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
