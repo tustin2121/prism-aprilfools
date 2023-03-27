@@ -30,6 +30,9 @@ LD := $(PREFIX)ld
 MODERNCC := $(PREFIX)gcc
 PATH_MODERNCC := PATH=$(TOOLCHAIN)/bin:PATH $(MODERNCC)
 
+# Version branch
+VERSION_STR := ver*0.95.0244
+
 ifeq ($(OS),Windows_NT)
 EXE := .exe
 else
@@ -131,11 +134,12 @@ RAMSCRGEN := tools/ramscrgen/ramscrgen$(EXE)
 FIX := tools/gbafix/gbafix$(EXE)
 MAPJSON := tools/mapjson/mapjson$(EXE)
 JSONPROC := tools/jsonproc/jsonproc$(EXE)
+COPYSTAMP := tools/copystamp/copystamp$(EXE)
 
 PERL := perl
 
 # Inclusive list. If you don't want a tool to be built, don't add it here.
-TOOLDIRS := tools/aif2pcm tools/bin2c tools/gbafix tools/gbagfx tools/jsonproc tools/mapjson tools/mid2agb tools/preproc tools/ramscrgen tools/rsfont tools/scaninc
+TOOLDIRS := tools/aif2pcm tools/bin2c tools/copystamp tools/gbafix tools/gbagfx tools/jsonproc tools/mapjson tools/mid2agb tools/preproc tools/ramscrgen tools/rsfont tools/scaninc
 TOOLBASE = $(TOOLDIRS:tools/%=%)
 TOOLS = $(foreach tool,$(TOOLBASE),tools/$(tool)/$(tool)$(EXE))
 
@@ -281,6 +285,11 @@ include songs.mk
 $(CRY_SUBDIR)/%.bin: $(CRY_SUBDIR)/%.aif ; $(AIF) $< $@ --compress
 sound/%.bin: sound/%.aif ; $(AIF) $< $@
 
+build/copystamped.bin: .git/index
+	$(COPYSTAMP) build/copystamped.bin -19:s $(VERSION_STR)
+#	$(COPYSTAMP) build/copystamped.bin `git log -1 --format="-18:s $(VERSION_STR) -19:s *********************%h -19:t %ct"`
+build/copystamped.bin.lz: build/copystamped.bin
+	$(GFX) build/copystamped.bin $@
 
 ifeq ($(MODERN),0)
 $(C_BUILDDIR)/libc.o: CC1 := tools/agbcc/bin/old_agbcc$(EXE)
