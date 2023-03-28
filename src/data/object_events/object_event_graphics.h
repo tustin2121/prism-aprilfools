@@ -363,5 +363,5 @@ const u16 gObjectEventPal_HoOh[] = INCBIN_U16("graphics/object_events/palettes/h
 
 const u32 gObjectEventPic_Minecart[] = INCBIN_U32("graphics/object_events/minecart.4bpp");
 const u16 gObjectEventPal_Minecart[] = INCBIN_U16("graphics/object_events/minecart.gbapal");
-const u32 gObjectEventPic_Campfire[] = INCBIN_U32("graphics/object_events/pics/cushions/fire_cushion.4bpp");
-const u16 gObjectEventPal_Campfire[] = INCBIN_U16("graphics/object_events/pics/cushions/fire_cushion.gbapal");
+const u32 gObjectEventPic_Campfire[] = INCBIN_U32("graphics/object_events/pics/misc/campfire.4bpp");
+const u16 gObjectEventPal_Campfire[] = INCBIN_U16("graphics/object_events/pics/misc/campfire.gbapal");
