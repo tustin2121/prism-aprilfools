@@ -853,15 +853,15 @@ static void UpdateLegendaryMarkingColor(u8 frameNum)
     {
         s32 intensity = Cos(frameNum, 128) + 128;
         s32 r = 31 - ((intensity * 32 - intensity) / 256);
-        s32 g = 31 - (intensity * 22 / 256);
-        s32 b = 12;
+        s32 g = 31 - (intensity * 28 / 256);
+        s32 b = 4;
 
         u16 color = RGB(r, g, b);
         LoadPalette(&color, BG_PLTT_ID(14) + 15, sizeof(color));
     }
     if ((frameNum % 4) == 1)
     {
-        u16 pal[8];
+        u16 pal[7];
         u32 start = 360 - ((gMain.vblankCounter1 >> 2) % 360);
         u32 i = 0;
         for (i = 0; i < 8; i++) {
