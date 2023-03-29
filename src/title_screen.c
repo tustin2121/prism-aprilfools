@@ -52,13 +52,10 @@ static void SpriteCB_PressStartCopyrightBanner(struct Sprite *sprite);
 static void SpriteCB_PokemonLogoShine(struct Sprite *sprite);
 
 // const rom data
-static const u16 sUnusedUnknownPal[] = INCBIN_U16("graphics/title_screen/unused.gbapal");
-
 static const u32 sTitleScreenRayquazaGfx[] = INCBIN_U32("graphics/title_screen/rayquaza.4bpp.lz");
 static const u32 sTitleScreenRayquazaTilemap[] = INCBIN_U32("graphics/title_screen/rayquaza.bin.lz");
 static const u32 sTitleScreenLogoShineGfx[] = INCBIN_U32("graphics/title_screen/logo_shine.4bpp.lz");
 static const u32 sTitleScreenCloudsGfx[] = INCBIN_U32("graphics/title_screen/clouds.4bpp.lz");
-
 
 
 // Used to blend "Emerald Version" as it passes over over the Pokémon banner.
@@ -705,6 +702,7 @@ static void Task_TitleScreenPhase2(u8 taskId)
                                     | DISPCNT_OBJ_ON);
         CreatePressStartBanner(START_BANNER_X, 108);
         CreateCopyrightBanner(START_BANNER_X, 148);
+        UpdateLegendaryMarkingColor(1);
         gTasks[taskId].data[4] = 0;
         gTasks[taskId].func = Task_TitleScreenPhase3;
     }
@@ -802,6 +800,53 @@ static void CB2_GoToBerryFixScreen(void)
     }
 }
 
+#define Q_20_12(n)  ((s32)((n) * 4096))
+#define Q_20_12_TO_INT(n)  ((int)((n) / 4096))
+
+const static u8 sRainbowPalette[] = {
+     12,  14,  17,  19,  22,  24,  26,  29,  31,  34,
+     36,  39,  41,  43,  46,  48,  51,  53,  56,  58,
+     61,  63,  65,  68,  70,  73,  75,  78,  80,  82,
+     85,  87,  90,  92,  95,  97, 100, 102, 104, 107,
+    109, 112, 114, 117, 119, 121, 124, 126, 129, 131,
+    134, 136, 138, 141, 143, 146, 148, 151, 153, 156, // 60
+    
+    156, 156, 156, 156, 156, 156, 156, 156, 156, 156, 
+    156, 156, 156, 156, 156, 156, 156, 156, 156, 156, 
+    156, 156, 156, 156, 156, 156, 156, 156, 156, 156, 
+    156, 156, 156, 156, 156, 156, 156, 156, 156, 156, 
+    156, 156, 156, 156, 156, 156, 156, 156, 156, 156, 
+    156, 156, 156, 156, 156, 156, 156, 156, 156, 156, // 120
+    
+    156, 156, 156, 156, 156, 156, 156, 156, 156, 156, 
+    156, 156, 156, 156, 156, 156, 156, 156, 156, 156, 
+    156, 156, 156, 156, 156, 156, 156, 156, 156, 156, 
+    156, 156, 156, 156, 156, 156, 156, 156, 156, 156, 
+    156, 156, 156, 156, 156, 156, 156, 156, 156, 156, 
+    156, 156, 156, 156, 156, 156, 156, 156, 156, 156, // 180
+    
+    153, 151, 148, 146, 143, 141, 138, 136, 134, 131, 
+    129, 126, 124, 121, 119, 117, 114, 112, 109, 107, 
+    104, 102, 100,  97,  95,  92,  90,  87,  85,  82, 
+     80,  78,  75,  73,  70,  68,  65,  63,  61,  58, 
+     56,  53,  51,  48,  46,  43,  41,  39,  36,  34, 
+     31,  29,  26,  24,  22,  19,  17,  14,  12,   9, // 240
+    
+      9,   9,   9,   9,   9,   9,   9,   9,   9,   9, 
+      9,   9,   9,   9,   9,   9,   9,   9,   9,   9, 
+      9,   9,   9,   9,   9,   9,   9,   9,   9,   9, 
+      9,   9,   9,   9,   9,   9,   9,   9,   9,   9, 
+      9,   9,   9,   9,   9,   9,   9,   9,   9,   9, 
+      9,   9,   9,   9,   9,   9,   9,   9,   9,   9, // 300
+    
+      9,   9,   9,   9,   9,   9,   9,   9,   9,   9, 
+      9,   9,   9,   9,   9,   9,   9,   9,   9,   9, 
+      9,   9,   9,   9,   9,   9,   9,   9,   9,   9, 
+      9,   9,   9,   9,   9,   9,   9,   9,   9,   9, 
+      9,   9,   9,   9,   9,   9,   9,   9,   9,   9, 
+      9,   9,   9,   9,   9,   9,   9,   9,   9,   9, // 360
+};
+
 static void UpdateLegendaryMarkingColor(u8 frameNum)
 {
     if ((frameNum % 4) == 0) // Change color every 4th frame
@@ -813,5 +858,19 @@ static void UpdateLegendaryMarkingColor(u8 frameNum)
 
         u16 color = RGB(r, g, b);
         LoadPalette(&color, BG_PLTT_ID(14) + 15, sizeof(color));
-   }
+    }
+    if ((frameNum % 4) == 1)
+    {
+        u16 pal[8];
+        u32 start = 360 - ((gMain.vblankCounter1 >> 2) % 360);
+        u32 i = 0;
+        for (i = 0; i < 8; i++) {
+            u32 r = (sRainbowPalette[(start + (i * 16) +   0) % 360] * 31) / 256;
+            u32 g = (sRainbowPalette[(start + (i * 16) + 120) % 360] * 31) / 256;
+            u32 b = (sRainbowPalette[(start + (i * 16) + 240) % 360] * 31) / 256;
+            
+            pal[i] = RGB(r, g, b);
+        }
+        LoadPalette(&pal, BG_PLTT_ID(14) + 4, sizeof(pal));
+    }
 }
