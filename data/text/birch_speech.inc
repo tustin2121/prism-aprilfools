@@ -132,4 +132,7 @@ gText_Skyrim_IntroLine1::
 gText_Skyrim_AprilFools::
 	.string "{CLEAR_TO 60}Happy April Fools\n"
 	.string "{CLEAR_TO 59}from RainbowDevs$"
+gText_Skyrim_ComingSoon::
+	.string "{CLEAR_TO 26}(The real release of Prism 0.95\n"
+	.string "{CLEAR_TO 18}is coming really soon. We promise.)$"
 

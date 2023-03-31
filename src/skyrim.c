@@ -527,6 +527,7 @@ static void Task_Skyrim_DisplayFinallyAwake(u8 taskId)
 }
 
 extern const u8 gText_Skyrim_AprilFools[];
+extern const u8 gText_Skyrim_ComingSoon[];
 static void Task_Skyrim_DisplayAprilFools(u8 taskId)
 {
     // TODO: Move message (BG0) to middle of screen
@@ -549,6 +550,14 @@ static void Task_Skyrim_DisplayAprilFools(u8 taskId)
 	Skyrim_GoToNextStage(taskId);
 }
 
+static void Task_Skyrim_DisplayComingSoon(u8 taskId)
+{
+    FillWindowPixelBuffer(0, PIXEL_FILL(0));
+	AddTextPrinterParameterized(0, FONT_SKYRIM, gText_Skyrim_ComingSoon, 0, 1, 0, NULL);
+	PutWindowTilemap(0);
+    CopyWindowToVram(0, COPYWIN_GFX);
+    Skyrim_GoToNextStage(taskId);
+}
 
 
 
@@ -597,7 +606,11 @@ static void Skyrim_GoToNextStage(u8 taskId)
 		case 43: DO_DELAY((2 * 60));
 		case 44: DO_FUNC(Task_Skyrim_DisplayAprilFools);
 		case 45: DO_FUNC(Task_Skyrim_WaitMessage);
-		case 46: DO_DELAY((10 * 60));
+		case 46: DO_DELAY((6 * 60));
+        
+		case 47: DO_FUNC(Task_Skyrim_DisplayComingSoon);
+		case 48: DO_FUNC(Task_Skyrim_WaitMessage);
+		case 49: DO_DELAY((10 * 60));
 		
 		case 100:
 			SoftReset(RESET_ALL);
